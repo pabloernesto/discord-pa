@@ -1,3 +1,4 @@
+// generate an array of the numbers 0 through to size - 1
 const range = size => new Array(size).fill().map((_, i) => i);
 
 // interprets an array permutation as a random walk through a graph
