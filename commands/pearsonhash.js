@@ -12,8 +12,8 @@ const mypearson = pearson(mytable);
 const execute = (msg, argstring) => {
   const { data } = argstring.match(/"(?<data>.*)"/).groups;
   const hash = data
-    .split('')
-    .map(s => s.charCodeAt(0))
+    .split('')                  // 'hi' => [ 'h', 'i' ]
+    .map(s => s.charCodeAt(0))  // can't xor strings, so convert to ASCII codes
     .reduce(mypearson, 0);
   msg.reply(`"${data}" hashed to ${hash} with table [${mytable.join(' ')}]`);
 };
