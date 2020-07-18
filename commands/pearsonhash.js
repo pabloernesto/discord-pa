@@ -1,9 +1,6 @@
 const { fisherYates } = require('../utils/fisherYates.js');
 const { range } = require('../utils/graphtools.js');
-
-// from a permutation table, generate a function that performs a step
-// of pearson's hash
-const pearson = table => (h, x) => table[h ^ x];
+const { pearson } = require('../utils/pearson.js');
 
 // generate the table for pearson's hash
 const mytable = fisherYates(range(256));
