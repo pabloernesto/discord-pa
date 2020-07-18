@@ -22,10 +22,7 @@ client.on('message', msg => {
   // eg: '!shout hello' -> 'shout hello' -> { command: 'shout', rest: 'hello' }
   const re = /^(?<command>\S+)(\s+(?<rest>.*))?$/;
   const match = msg.content.slice(config.prefix.length).match(re);
-  if (match === null) {
-    console.error(error);
-    return;
-  }
+  if (match === null) return;
   const { command, rest } = match.groups;
 
   if (!commands.has(command)) {
