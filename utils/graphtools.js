@@ -5,7 +5,11 @@ const range = size => new Array(size).fill().map((_, i) => i);
 // generates the array associated to that walk
 const walk = arr => {
   const out = new Array(arr.length);
-  arr.forEach((v, i) => out[v] = arr[(i + 1) % arr.length]);
+  for (let i = 0; i < arr.length; i++) {
+    const v1 = arr[i];
+    const v2 = arr[(i + 1) % arr.length];
+    out[v1] = v2;
+  }
   return out;
 }
 
